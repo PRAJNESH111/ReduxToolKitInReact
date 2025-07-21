@@ -2,6 +2,7 @@ import React from "react";
 import {
   decreaseItemQuantity,
   increaseItemQuantity,
+  removeItemfromcart,
 } from "../store/CartReducre";
 import { useDispatch } from "../storeHook";
 
@@ -31,7 +32,7 @@ export default function CartItem({
       <div className="item-quantity">
         <button
           onClick={() => {
-            dispatch(decreaseItemQuantity(productId));
+            dispatch(decreaseItemQuantity({ productId }));
           }}
         >
           -
@@ -39,10 +40,13 @@ export default function CartItem({
         <span>{quantity}</span>
         <button
           onClick={() => {
-            dispatch(increaseItemQuantity(productId));
+            dispatch(increaseItemQuantity({ productId }));
           }}
         >
           +
+        </button>
+        <button onClick={() => dispatch(removeItemfromcart({ productId }))}>
+          Remove
         </button>
       </div>
       <div className="item-total">${quantity * price}</div>

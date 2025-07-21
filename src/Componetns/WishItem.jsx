@@ -1,4 +1,6 @@
-// import { useDispatch } from "../storeHook";
+// import { removeItemfromcart } from "../store/CartReducre";
+import { removeWishlist } from "../store/WishListReducre";
+import { useDispatch } from "../storeHook";
 
 export default function WishItem({
   key,
@@ -10,7 +12,7 @@ export default function WishItem({
   quantity,
 }) {
   console.log(productId);
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <div className="cart-item-container" key={key}>
       <div className="cart-item">
@@ -41,6 +43,9 @@ export default function WishItem({
           disabled
         >
           +
+        </button>
+        <button onClick={() => dispatch(removeWishlist(productId))}>
+          Remove
         </button>
       </div>
       <div className="item-total">${quantity * price}</div>

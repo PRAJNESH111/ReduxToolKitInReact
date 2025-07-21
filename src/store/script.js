@@ -161,27 +161,35 @@
 
 //****Reduce the reducer */
 
-import { combineReducers, createStore } from "redux";
+// import // combineReducers,
+// // createStore
+// "redux";
 import ProductReducer from "./ProductReducer";
-import CartReducer from // addtocart,
-// removeItemfromcart,
-// decreaseItemQuantity,
-// increaseItemQuantity,
-"./CartReducre";
-import WishListReducer from // addWishlist,
-// removeWishlist,
-"./WishListReducre";
+import CartReducer from "./CartReducre"; // increaseItemQuantity, // decreaseItemQuantity, // removeItemfromcart, // addtocart,
+import WishListReducer from "./WishListReducre"; // removeWishlist, // addWishlist,
+import { configureStore } from "@reduxjs/toolkit";
+import { logger } from "./middleware/logger";
 
-const reducer = combineReducers({
-  product: ProductReducer,
-  cart: CartReducer,
-  wishList: WishListReducer,
+// import { produce } from "immer";
+
+// const reducer = combineReducers({
+//   product: ProductReducer,
+//   cart: CartReducer,
+//   wishList: WishListReducer,
+// });
+
+// export const store = createStore(
+//   reducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__?.()
+// );
+export const store = configureStore({
+  reducer: {
+    product: ProductReducer,
+    cart: CartReducer,
+    wishList: WishListReducer,
+  },
+  middleware: () => [logger],
 });
-
-export const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__?.()
-);
 // console.dir(reducer);
 // store.subscribe(() => {
 //   console.log(store.getState());
@@ -198,3 +206,33 @@ export const store = createStore(
 // store.dispatch(decreaseItemQuantity(15));
 // store.dispatch(decreaseItemQuantity(10));
 // store.dispatch(addWishlist(15));
+
+//* immer
+// const users = [
+//   {
+//     name: "prajnesh",
+//     age: 24,
+//   },
+//   {
+//     name: "vanaja",
+//     age: 60,
+//   },
+//   {
+//     name: "vanajesh",
+//     age: 50,
+//   },
+// ];
+// users[0].age = 20;
+// console.log(users);
+// let newuser = users.map((user, i) => {
+//   if (i == 0) {
+//     return { ...user, age: 20 };
+//   }
+//   return user;
+// });
+// console.log(newuser);
+// let newusers = produce(users, (usercopy) => {
+//   console.log(usercopy);
+//   usercopy[1].age = 20;
+// });
+// console.log(newusers);
