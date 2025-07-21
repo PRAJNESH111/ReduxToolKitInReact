@@ -12,9 +12,10 @@ export default function WishItem({
   quantity,
 }) {
   console.log(productId);
+  console.log(key);
   const dispatch = useDispatch();
   return (
-    <div className="cart-item-container" key={key}>
+    <div className="cart-item-container" key={productId}>
       <div className="cart-item">
         <img src={image} alt={title} />
         <div>
