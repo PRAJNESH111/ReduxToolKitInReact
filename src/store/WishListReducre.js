@@ -1,7 +1,7 @@
 export const WISHLIST_ADD_ITEM = "WishList/addItem";
 export const WISHLIST_REMOVE_ITEM = "WishList/removeItem";
 export function addWishlist(productData) {
-  console.log(productData);
+  // console.log(productData);
   return {
     type: WISHLIST_ADD_ITEM,
     payload: productData,

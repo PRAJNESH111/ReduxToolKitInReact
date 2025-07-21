@@ -258,5 +258,5 @@ export const {
   decreaseItemQuantity,
 } = slice.actions;
 
-console.log(addtocart.type);
+// console.log(addtocart.type);
 export default slice.reducer;

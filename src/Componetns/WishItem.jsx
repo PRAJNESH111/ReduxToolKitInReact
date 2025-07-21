@@ -3,7 +3,7 @@ import { removeWishlist } from "../store/WishListReducre";
 import { useDispatch } from "../storeHook";
 
 export default function WishItem({
-  key,
+  id,
   productId,
   title,
   rating,
@@ -11,11 +11,11 @@ export default function WishItem({
   image,
   quantity,
 }) {
-  console.log(productId);
-  console.log(key);
+  // console.log(productId);
+
   const dispatch = useDispatch();
   return (
-    <div className="cart-item-container" key={productId}>
+    <div className="cart-item-container" key={id}>
       <div className="cart-item">
         <img src={image} alt={title} />
         <div>

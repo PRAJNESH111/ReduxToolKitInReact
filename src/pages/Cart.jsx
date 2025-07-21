@@ -31,7 +31,7 @@ export default function Cart() {
   //   ];
   //   console.log(cartItems);
   const cartItems = useSelector((state) => state.cart);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="cart-container">

@@ -14,7 +14,7 @@ export default function CartItem({
   image,
   quantity,
 }) {
-  console.log(productId);
+  // console.log(productId);
   const dispatch = useDispatch();
   return (
     <div className="cart-item-container" key={productId}>

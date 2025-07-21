@@ -213,3 +213,51 @@ form button {
 .heart {
   padding-left: 800px;
 }
+@media (max-width: 480px) {
+  .cart-item-container {
+    grid-template-columns: 1fr; /* Stack all columns */
+    padding: 16px;
+  }
+
+  .cart-item-container > div {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-container img {
+    width: 50px;
+  }
+
+  .cart-header {
+    font-size: 18px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .cart-container h2 {
+    font-size: 20px;
+    margin: 24px 0;
+  }
+
+  .wish-items-count {
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    top: -4px;
+    left: 60%;
+    transform: translate(-50%, -170%);
+  }
+  .cart-items-count {
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    top: -4px;
+    left: 60%;
+  }
+
+  .heart {
+    padding-left: 0;
+    text-align: right;
+  }
+}

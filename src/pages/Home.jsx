@@ -7,7 +7,7 @@ import { useSelector } from "../storeHook";
 export default function Home() {
   const productsList = useSelector((state) => state.product);
   //   console.log(productsList);
-  useSelector((state) => console.log(state));
+  // useSelector((state) => console.log(state));
   return (
     <div className="products-container">
       {productsList.map(({ id, title, rating, price, image }) => (

@@ -6,7 +6,7 @@ import { useSelector } from "../storeHook";
 export default function Header() {
   const cartsize = useSelector((state) => state.cart);
   const wishsize = useSelector((state) => state.wishList);
-  console.log(wishsize);
+  // console.log(wishsize);
   return (
     <header>
       <div className="header-contents">

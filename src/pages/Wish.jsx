@@ -30,7 +30,7 @@ export default function Wish() {
   //   ];
   //   console.log(cartItems);
   const wishItems = useSelector((state) => state.wishList);
-  console.log(wishItems);
+  // console.log(wishItems);
 
   return (
     <div className="cart-container">
