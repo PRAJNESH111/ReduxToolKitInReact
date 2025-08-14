@@ -47,7 +47,7 @@ import { HashRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <HashRouter basename="/ReduxToolKitInReact/">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
