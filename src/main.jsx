@@ -46,7 +46,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <BrowserRouter basename="/ReduxToolKitInReact">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
