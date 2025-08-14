@@ -43,10 +43,11 @@ import Wish from "./pages/Wish.jsx";
 import { Provider } from "./react-redux.jsx";
 import { store } from "./store/script";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter basename="/ReduxToolKitInReact/">
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
@@ -54,6 +55,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="wish" element={<Wish />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );
